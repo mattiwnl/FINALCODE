@@ -16,22 +16,28 @@ public class DriveSubsystem extends Subsystem {
     private static final TalonSRX rightSlave2 = new TalonSRX(Constants.kRightSlave2Id);
 
     public DriveSubsystem() {
+        // Follows
         leftSlave1.follow(leftMaster);
         leftSlave2.follow(leftMaster);
         rightSlave1.follow(rightMaster);
         rightSlave2.follow(rightMaster);
 
+        // Invert Right
         rightMaster.setInverted(true);
         rightSlave1.setInverted(true);
         rightSlave2.setInverted(true);
 
+        // Brake Motors
         leftMaster.setNeutralMode(NeutralMode.Brake);
         rightMaster.setNeutralMode(NeutralMode.Brake);
 
+        // Left Configs
         leftMaster.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder, 0, 0);
         leftMaster.setSelectedSensorPosition(0, 0, 0);
         leftMaster.setSensorPhase(false);
         leftMaster.configOpenloopRamp(.25, 0);
+
+        // Right Configs
         rightMaster.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder, 0, 0);
         rightMaster.setSelectedSensorPosition(0, 0, 0);
         rightMaster.setSensorPhase(false);
@@ -39,9 +45,11 @@ public class DriveSubsystem extends Subsystem {
     }
 
     public void driveLeft(double left) {
+        // Left Side DriveTrain
         leftMaster.set(ControlMode.PercentOutput, left);
     }
     public void driveRight(double right) {
+        // Right Side DriveTrain
         rightMaster.set(ControlMode.PercentOutput, right);
     }
     
