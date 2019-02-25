@@ -1,10 +1,9 @@
 package frc.robot.duckbill;
 
-import frc.robot.Robot;
+import edu.wpi.first.wpilibj.command.Command;
 
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
-import edu.wpi.first.wpilibj.command.Command;
 
 public class AutoDuckBillRelease extends Command {
     

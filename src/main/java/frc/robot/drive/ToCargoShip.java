@@ -1,7 +1,6 @@
 package frc.robot.drive;
 
-import edu.wpi.first.wpilibj.command.*;
-import frc.robot.Robot;
+import edu.wpi.first.wpilibj.command.Command;
 
 public class ToCargoShip extends Command {
 

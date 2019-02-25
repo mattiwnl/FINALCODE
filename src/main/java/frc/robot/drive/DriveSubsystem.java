@@ -1,9 +1,9 @@
 package frc.robot.drive;
 
-import com.ctre.phoenix.motorcontrol.*;
+import edu.wpi.first.wpilibj.command.Subsystem;
+
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
-import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.Constants;
 
 public class DriveSubsystem extends Subsystem {

@@ -1,9 +1,10 @@
 package frc.robot.duckbill;
 
-import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.command.Command;
+
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
+
 import frc.robot.Constants;
-import frc.robot.Robot;
 
 public class DuckBill extends Command {
     
