@@ -1,6 +1,8 @@
 package frc.robot.drive;
 
-import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.TimedCommand;
+
+import frc.robot.Robot;
 
 public class AutoDrive extends TimedCommand {
     
