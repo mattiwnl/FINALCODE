@@ -1,7 +1,7 @@
 package frc.robot.compressor;
 
-import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
+import edu.wpi.first.wpilibj.command.Command;
 
 public class CompressorCMD extends Command {
 

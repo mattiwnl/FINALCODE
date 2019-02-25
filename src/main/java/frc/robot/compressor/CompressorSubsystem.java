@@ -1,6 +1,6 @@
 package frc.robot.compressor;
 
-import edu.wpi.first.wpilibj.*;
+import edu.wpi.first.wpilibj.Robot;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class CompressorSubsystem extends Subsystem {
@@ -16,6 +16,6 @@ public class CompressorSubsystem extends Subsystem {
 
     @Override
     protected void initDefaultCommand() {
-        setDefaultCommand(new CompressorCMD());
+        setDefaultCommand(new Compressor());
     }
 }
