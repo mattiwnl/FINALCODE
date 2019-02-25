@@ -1,9 +1,11 @@
 package frc.robot.gearshift;
 
-import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.Constants;
+
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
+
 import frc.robot.Robot;
+import frc.robot.Constants;
 
 public class GearShift extends Command {
     

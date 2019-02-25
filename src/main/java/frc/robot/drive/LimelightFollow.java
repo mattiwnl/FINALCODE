@@ -2,6 +2,8 @@ package frc.robot.drive;
 
 import edu.wpi.first.wpilibj.command.Command;
 
+import frc.robot.Robot;
+
 public class LimelightFollow extends Command {
 
     double llX = Robot.kLimelight.x;

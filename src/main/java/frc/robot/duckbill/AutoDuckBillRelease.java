@@ -5,6 +5,8 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 
+import frc.robot.Robot;
+
 public class AutoDuckBillRelease extends Command {
     
     boolean done = false;

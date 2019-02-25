@@ -4,6 +4,7 @@ import edu.wpi.first.wpilibj.command.Command;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 
+import frc.robot.Robot;
 import frc.robot.Constants;
 
 public class DuckBill extends Command {
