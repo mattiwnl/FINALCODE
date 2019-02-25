@@ -26,12 +26,12 @@ public class Constants {
         public static final int kXboxButtonSelectId = 8;    // Unused
     
     // Drive Train Talons
-	public static final int kRightMasterId = 4;
-    public static final int kRightSlave1Id = 5;
-    public static final int kRightSlave2Id = 6;
     public static final int kLeftMasterId = 1;
     public static final int kLeftSlave1Id = 2;
     public static final int kLeftSlave2Id = 3;
+	public static final int kRightMasterId = 4;
+    public static final int kRightSlave1Id = 5;
+    public static final int kRightSlave2Id = 6;
 
     // Intake Victors
     public static final int kLeftIntakeId = 1;
@@ -39,6 +39,9 @@ public class Constants {
 
     // Lift Talon
     public static final int kLiftMotorId = 7;
+
+    // Limelight Servo
+    public static final int kLLServoId = 1;
 
     // DoubleSolenoid
     public static final int kHighGearId = 0;
@@ -49,6 +52,5 @@ public class Constants {
     public static final int kDuckBillDownId = 5;
 
     // Other Constants
-    public static final int kLLServoId = 1;
     public static final int kWheelDiameter = 6;
 }

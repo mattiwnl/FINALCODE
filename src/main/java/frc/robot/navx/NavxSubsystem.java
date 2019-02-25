@@ -1,10 +1,11 @@
 package frc.robot.navx;
 
-import com.kauailabs.navx.frc.AHRS;
+import edu.wpi.first.wpilibj.command.Subsystem;
 
 import edu.wpi.first.wpilibj.*;
-import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.*;
+
+import com.kauailabs.navx.frc.AHRS;
 
 public class NavxSubsystem extends Subsystem {
 

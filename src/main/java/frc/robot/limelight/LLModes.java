@@ -1,9 +1,11 @@
 package frc.robot.limelight;
 
-import edu.wpi.first.networktables.*;
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.Constants;
+
+import edu.wpi.first.networktables.*;
+
 import frc.robot.Robot;
+import frc.robot.Constants;
 
 public class LLModes extends Command {
 

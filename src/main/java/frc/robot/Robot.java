@@ -1,7 +1,8 @@
 package frc.robot;
 
-import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.command.Scheduler;
+
+import edu.wpi.first.wpilibj.*;
 
 import frc.robot.autogroup.*;
 import frc.robot.compressor.*;

@@ -1,9 +1,10 @@
 package frc.robot.lift;
 
+import edu.wpi.first.wpilibj.command.Subsystem;
+
 import com.ctre.phoenix.motorcontrol.*;
 import com.ctre.phoenix.motorcontrol.can.*;
 
-import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.Constants;
 
 public class LiftSubsystem extends Subsystem {

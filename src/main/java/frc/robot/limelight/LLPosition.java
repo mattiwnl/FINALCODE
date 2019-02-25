@@ -1,8 +1,9 @@
 package frc.robot.limelight;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.Constants;
+
 import frc.robot.Robot;
+import frc.robot.Constants;
 
 public class LLPosition extends Command {
 
@@ -12,7 +13,6 @@ public class LLPosition extends Command {
 
     @Override
     protected void initialize() {
-
     }
 
     @Override

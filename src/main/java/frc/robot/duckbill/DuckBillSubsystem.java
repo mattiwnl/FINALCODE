@@ -12,7 +12,6 @@ public class DuckBillSubsystem extends Subsystem {
     public static final DoubleSolenoid duckBill = new DoubleSolenoid(Constants.kDuckBillUpId, Constants.kDuckBillDownId);
 
     public DuckBillSubsystem() {
-
     }
 
     public void duckBill(Value duckPos) {

@@ -1,9 +1,11 @@
 package frc.robot.limelight;
 
-import edu.wpi.first.networktables.*;
-import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj.command.Subsystem;
+
+import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.networktables.*;
+
 import frc.robot.Constants;
 
 public class LimelightSubsystem extends Subsystem {
