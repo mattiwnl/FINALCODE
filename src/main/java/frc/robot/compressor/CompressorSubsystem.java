@@ -10,8 +10,8 @@ public class CompressorSubsystem extends Subsystem {
     public CompressorSubsystem() {
     }
 
-    public void CompressorRun(boolean bCompress) {
-        compressor.setClosedLoopControl(bCompress);
+    public void CompressorRun(boolean Compress) {
+        compressor.setClosedLoopControl(Compress);
     }
 
     @Override
