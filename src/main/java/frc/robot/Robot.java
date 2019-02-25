@@ -32,23 +32,25 @@ public class Robot extends TimedRobot {
     public static ScissorSubsystem kScissor = new ScissorSubsystem();
 
     @Override
-    public void robotInit() {}
-    @Override
-    public void robotPeriodic() {
+    public void robotInit() {
         new LLModes().start();
         new LLPosition().start();
         new Compressor().start();
+    }
+    @Override
+    public void robotPeriodic() {
         Scheduler.getInstance().run();
     }
     @Override
-    public void disabledInit() {}
+    public void disabledInit() {
+        new Disabled().start();
+    }
     @Override
     public void disabledPeriodic() {
+        Scheduler.getInstance().run();
     } 
     @Override
-    public void autonomousInit() {}
-    @Override
-    public void autonomousPeriodic() {
+    public void autonomousInit() {
         boolean toggle10 = toggles.getRawButton(Constants.kToggle10Id);
         // new LimelightFollow().start();
         if(toggle10 == false) {
@@ -58,14 +60,20 @@ public class Robot extends TimedRobot {
         }
     }
     @Override
-    public void teleopInit() {}
+    public void autonomousPeriodic() {
+        Scheduler.getInstance().run();
+    }
     @Override
-    public void teleopPeriodic() {
+    public void teleopInit() {
         new Drive().start();
         new GearShift().start();
         new Scissor().start();
         new DuckBill().start();
         new Intake().start();
         new Lift().start();
+    }
+    @Override
+    public void teleopPeriodic() {
+        Scheduler.getInstance().run();
     }
 }
