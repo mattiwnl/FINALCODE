@@ -1,13 +1,17 @@
 package frc.robot.limelight;
 
 import edu.wpi.first.wpilibj.command.Command;
-
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.networktables.*;
 
 import frc.robot.Robot;
 import frc.robot.Constants;
 
 public class LLModes extends Command {
+
+    double area = Robot.kLimelight.area;
+    double x = Robot.kLimelight.x;
+    double y = Robot.kLimelight.y;
 
     public LLModes() {
         requires(Robot.kLimelight);
@@ -19,6 +23,9 @@ public class LLModes extends Command {
 
     @Override
     protected void execute() {
+        SmartDashboard.putNumber("Limelight Area", area);
+        SmartDashboard.putNumber("Limelight X", x);
+        SmartDashboard.putNumber("Limelight Y", y);
         boolean toggle9 = Robot.toggles.getRawButton(Constants.kToggle9Id);
         if(toggle9 == false) {
             NetworkTableInstance.getDefault().getTable("limelight").getEntry("ledMode").setNumber(3); // LED On

@@ -3,7 +3,6 @@ package frc.robot.limelight;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 import edu.wpi.first.wpilibj.Servo;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.networktables.*;
 
 import frc.robot.Constants;
@@ -30,9 +29,6 @@ public class LimelightSubsystem extends Subsystem {
         x = tx.getDouble(0.0);
         y = ty.getDouble(0.0);
         area = ta.getDouble(0.0);
-        SmartDashboard.putNumber("Limelight Area", area);
-        SmartDashboard.putNumber("Limelight X", x);
-        SmartDashboard.putNumber("Limelight Y", y);
     }
 
     public void LLServo(double servoValue) {
