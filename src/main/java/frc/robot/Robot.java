@@ -33,6 +33,7 @@ public class Robot extends TimedRobot {
 
     @Override
     public void robotInit() {
+        new PressureSensor().start();
         new Compressor().start();
         new LLModes().start();
         new LLPosition().start();
