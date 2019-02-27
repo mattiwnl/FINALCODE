@@ -6,10 +6,6 @@ import frc.robot.Robot;
 
 public class TurnToFront extends Command {
 
-    double pitch = Robot.kNavx.kPitch;
-    double yaw = Robot.kNavx.kYaw;
-    double angle = Robot.kNavx.kAngle;
-
     boolean done = false;
 
     public TurnToFront() {
@@ -23,13 +19,14 @@ public class TurnToFront extends Command {
 
     @Override
     protected void execute() {
-        if(angle > .5 && angle < 180.5) {
+        double angle = Robot.kNavx.gyro.getAngle();
+        if(angle > 1 && angle < 181) {
             Robot.kDrive.driveLeft(-.25);
             Robot.kDrive.driveRight(.25); 
-        }else if(angle < -.5 && angle > -180.5) {
+        }else if(angle < -1 && angle > -181) {
             Robot.kDrive.driveLeft(.25);
             Robot.kDrive.driveRight(-.25); 
-        }else if(angle < .5 && angle > -.5) {
+        }else if(angle < 1 && angle > -1) {
             Robot.kDrive.driveLeft(0);
             Robot.kDrive.driveRight(0); 
             done = true;

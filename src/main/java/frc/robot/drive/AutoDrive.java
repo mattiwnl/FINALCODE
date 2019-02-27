@@ -7,7 +7,7 @@ import frc.robot.Robot;
 public class AutoDrive extends TimedCommand {
     
     public static double goal = 8;
-    public static double kP = 0.125;
+    public static double kP = 0.1;
 
     public AutoDrive() {
         super(.75);

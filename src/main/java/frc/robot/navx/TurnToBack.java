@@ -5,10 +5,6 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
 public class TurnToBack extends Command {
-    
-    double pitch = Robot.kNavx.kPitch;
-    double yaw = Robot.kNavx.kYaw;
-    double angle = Robot.kNavx.kAngle;
 
     boolean done = false;
 
@@ -23,13 +19,14 @@ public class TurnToBack extends Command {
     
     @Override
     protected void execute() {
-        if(angle < 179.5 && angle > -.5) {
+        double angle = Robot.kNavx.gyro.getAngle();
+        if(angle < 179 && angle > -1) {
             Robot.kDrive.driveLeft(.25);
             Robot.kDrive.driveRight(-.25); 
-        }else if(angle > -179.5 && angle < .5) {
+        }else if(angle > -179 && angle < 1) {
             Robot.kDrive.driveLeft(-.25);
             Robot.kDrive.driveRight(.25); 
-        }else if(angle < -179.5 && angle > 179.5) {
+        }else if(angle < -179 && angle > 179) {
             Robot.kDrive.driveLeft(0);
             Robot.kDrive.driveRight(0); 
             done = true;

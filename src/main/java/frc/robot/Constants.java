@@ -26,12 +26,12 @@ public class Constants {
         public static final int kXboxButtonSelectId = 8;    // Unused
     
     // Drive Train Talons
-    public static final int kLeftMasterId = 1;
-    public static final int kLeftSlave1Id = 2;
-    public static final int kLeftSlave2Id = 3;
-	public static final int kRightMasterId = 4;
-    public static final int kRightSlave1Id = 5;
-    public static final int kRightSlave2Id = 6;
+    public static final int kLeftMasterId = 4;
+    public static final int kLeftSlave1Id = 5;
+    public static final int kLeftSlave2Id = 6;
+	public static final int kRightMasterId = 1;
+    public static final int kRightSlave1Id = 2;
+    public static final int kRightSlave2Id = 3;
 
     // Intake Victors
     public static final int kLeftIntakeId = 1;

@@ -53,11 +53,12 @@ public class Robot extends TimedRobot {
     public void autonomousInit() {
         boolean toggle10 = toggles.getRawButton(Constants.kToggle10Id);
         // new LimelightFollow().start();
-        if(toggle10 == false) {
-            new LeftSideAuto().start();
-        }else if(toggle10 == true) {
-            new RightSideAuto().start();
-        }
+        // if(toggle10 == false) {
+        //     new LeftSideAuto().start();
+        // }else if(toggle10 == true) {
+        //     new RightSideAuto().start();
+        // }
+        new NavxDriveStraight().start();
     }
     @Override
     public void autonomousPeriodic() {
