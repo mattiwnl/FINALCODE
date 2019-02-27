@@ -6,8 +6,8 @@ import edu.wpi.first.wpilibj.Compressor;
 
 public class CompressorSubsystem extends Subsystem {
 
-    AnalogInput pneumaticPSI = new AnalogInput(1);
     Compressor compressor = new Compressor(0);
+    AnalogInput pneumaticPSI = new AnalogInput(1);
     
     public CompressorSubsystem() {
     }
