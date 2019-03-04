@@ -7,6 +7,8 @@ import frc.robot.Robot;
 
 public class NavxDriveStraight extends Command {
 
+    public double llArea = Robot.kLimelight.area;
+
     public NavxDriveStraight() {
         requires(Robot.kDrive);
         requires(Robot.kNavx);
@@ -17,7 +19,7 @@ public class NavxDriveStraight extends Command {
         double angle = Robot.kNavx.gyro.getAngle();
         SmartDashboard.putNumber("angle", angle);
         boolean xboxA = Robot.xbox.getRawButton(Constants.kXboxButtonAId);
-        if(xboxA == true) {
+        if(llArea < 60){
             if(angle < 5 && angle > -5){
                 Robot.kDrive.driveLeft(.4);
                 Robot.kDrive.driveRight(.3);
@@ -25,19 +27,20 @@ public class NavxDriveStraight extends Command {
                 Robot.kDrive.driveLeft(.3);
                 Robot.kDrive.driveRight(.3);
             }else if(angle > -9 && angle < -5){
-                Robot.kDrive.driveLeft(.3);
+				Robot.kDrive.driveLeft(.3);
                 Robot.kDrive.driveRight(.3);
             }else if(angle > 9){
                 Robot.kDrive.driveLeft(0);
-                Robot.kDrive.driveRight(.4);
+                Robot.kDrive.driveRight(.3);
             }else if(angle < -9){
-                Robot.kDrive.driveLeft(.4);
-                Robot.kDrive.driveRight(0);
+                Robot.kDrive.driveLeft(.3);
+				Robot.kDrive.driveRight(0);
             }
-        }else if (xboxA == false){
+        }else if(llArea >= 60){
             Robot.kDrive.driveLeft(0);
             Robot.kDrive.driveRight(0); 
         }
+        
     }
 
     @Override

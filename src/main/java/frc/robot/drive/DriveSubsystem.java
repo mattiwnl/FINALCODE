@@ -17,6 +17,14 @@ public class DriveSubsystem extends Subsystem {
     private static final TalonSRX rightSlave2 = new TalonSRX(Constants.kRightSlave2Id);
 
     public DriveSubsystem() {
+        // Factory default so there is no funny business
+        leftMaster.configFactoryDefault();
+        leftSlave1.configFactoryDefault();
+        leftSlave2.configFactoryDefault();
+        rightMaster.configFactoryDefault();
+        rightSlave1.configFactoryDefault();
+        rightSlave2.configFactoryDefault();
+
         // Follows
         leftSlave1.follow(leftMaster);
         leftSlave2.follow(leftMaster);

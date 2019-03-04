@@ -4,15 +4,13 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 
 import edu.wpi.first.wpilibj.*;
 
-import frc.robot.autogroup.*;
 import frc.robot.compressor.*;
-import frc.robot.disabled.*;
 import frc.robot.drive.*;
 import frc.robot.duckbill.*;
 import frc.robot.gearshift.*;
 import frc.robot.intake.*;
 import frc.robot.lift.*;
-import frc.robot.limelight.*;
+import frc.robot.limelightvision.*;
 import frc.robot.navx.*;
 import frc.robot.scissor.*;
 
@@ -44,7 +42,6 @@ public class Robot extends TimedRobot {
     }
     @Override
     public void disabledInit() {
-        new Disabled().start();
     }
     @Override
     public void disabledPeriodic() {
@@ -52,7 +49,7 @@ public class Robot extends TimedRobot {
     } 
     @Override
     public void autonomousInit() {
-        boolean toggle10 = toggles.getRawButton(Constants.kToggle10Id);
+        // boolean toggle10 = toggles.getRawButton(Constants.kToggle10Id);
         // new LimelightFollow().start();
         // if(toggle10 == false) {
         //     new LeftSideAuto().start();
