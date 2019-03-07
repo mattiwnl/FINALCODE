@@ -6,8 +6,6 @@ import frc.robot.Robot;
 
 public class BackOffCargoShip extends Command {
 
-    public static double llArea = Robot.kLimelight.area;
-
     boolean done = false;
 
     public BackOffCargoShip() {
@@ -16,6 +14,7 @@ public class BackOffCargoShip extends Command {
     
     @Override
     protected void execute() {
+        double llArea = Robot.area;
         if(llArea > 15){
             Robot.kDrive.driveLeft(-.25);
             Robot.kDrive.driveRight(-.25);

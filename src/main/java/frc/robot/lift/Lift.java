@@ -13,11 +13,11 @@ public class Lift extends Command {
 
     @Override
     protected void execute() {
-        boolean xboxButtonX = Robot.xbox.getRawButton(Constants.kXboxButtonXId);
-        boolean xboxButtonY = Robot.xbox.getRawButton(Constants.kXboxButtonYId);
-        if(xboxButtonY == true) {
+        boolean xboxButtonRB = Robot.xbox.getRawButton(Constants.kXboxRightBumperId);
+        boolean xboxButtonLB = Robot.xbox.getRawButton(Constants.kXboxLeftBumperId);
+        if(xboxButtonLB == true) {
             Robot.kLift.lift(.5);
-        }else if(xboxButtonX == true) {
+        }else if(xboxButtonRB == true) {
             Robot.kLift.lift(-.5);
         }else{
             Robot.kLift.lift(0);

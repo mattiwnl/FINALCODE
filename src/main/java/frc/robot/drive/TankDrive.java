@@ -4,9 +4,9 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Robot;
 
-public class Drive extends Command {
+public class TankDrive extends Command {
 
-    public Drive() {
+    public TankDrive() {
         requires(Robot.kDrive);
     }
 
@@ -16,16 +16,16 @@ public class Drive extends Command {
         SmartDashboard.putNumber("angle", angle);
         double left = -Robot.xbox.getRawAxis(1);
         double right = -Robot.xbox.getRawAxis(5);
-            if(left > .1 || left < -.1) {
-                Robot.kDrive.driveLeft(left);
-            }else{
-                Robot.kDrive.driveLeft(0);
-            }
-            if(right > .1 || right < -.1) {
-                Robot.kDrive.driveRight(right);
-            }else{
-                Robot.kDrive.driveRight(0);
-            }
+        if(left > .1 || left < -.1) {
+            Robot.kDrive.driveLeft(left);
+        }else{
+            Robot.kDrive.driveLeft(0);
+        }
+        if(right > .1 || right < -.1) {
+            Robot.kDrive.driveRight(right);
+        }else{
+            Robot.kDrive.driveRight(0);
+        }
     }
 
     @Override

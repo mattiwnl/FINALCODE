@@ -13,12 +13,12 @@ public class Intake extends Command {
 
     @Override
     protected void execute() {
-        boolean xboxButtonA = Robot.xbox.getRawButton(Constants.kXboxButtonAId);
-        boolean xboxButtonB = Robot.xbox.getRawButton(Constants.kXboxButtonBId);
-        if(xboxButtonB == true) {
+        double xboxLeftTrigger = Robot.xbox.getRawAxis(Constants.kXboxLeftTriggerId);
+        double xboxRightTrigger = Robot.xbox.getRawAxis(Constants.kXboxRightTriggerId);
+        if(xboxRightTrigger > .1) {
             Robot.kIntake.intakeLeft(.25);
             Robot.kIntake.intakeRight(.25);
-        }else if(xboxButtonA == true) {
+        }else if(xboxLeftTrigger > .1) {
             Robot.kIntake.intakeLeft(-.25);
             Robot.kIntake.intakeRight(-.25);
         }else{

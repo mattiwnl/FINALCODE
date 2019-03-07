@@ -1,7 +1,7 @@
 package frc.robot.navx;
 
 import edu.wpi.first.wpilibj.command.Command;
-
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Robot;
 
 public class TurnToBack extends Command {
@@ -20,6 +20,7 @@ public class TurnToBack extends Command {
     @Override
     protected void execute() {
         double angle = Robot.kNavx.gyro.getAngle();
+        SmartDashboard.putNumber("angle", angle);
         if(angle < 179 && angle > -1) {
             Robot.kDrive.driveLeft(.25);
             Robot.kDrive.driveRight(-.25); 
@@ -30,6 +31,7 @@ public class TurnToBack extends Command {
             Robot.kDrive.driveLeft(0);
             Robot.kDrive.driveRight(0); 
             done = true;
+            isFinished();
         }
     }
 

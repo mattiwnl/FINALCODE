@@ -4,9 +4,9 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Robot;
 
-public class SplitArcade extends Command {
+public class SingleStickArcade extends Command {
 
-    public SplitArcade() {
+    public SingleStickArcade() {
         requires(Robot.kDrive);
     }
 
@@ -15,7 +15,7 @@ public class SplitArcade extends Command {
         double angle = Robot.kNavx.gyro.getAngle();
         SmartDashboard.putNumber("angle", angle);
         double throttle = -Robot.xbox.getRawAxis(1);
-        double turn = Robot.xbox.getRawAxis(4);
+        double turn = Robot.xbox.getRawAxis(0);
         Robot.kDrive.driveLeft(throttle + turn);
         Robot.kDrive.driveRight(throttle - turn);
     }

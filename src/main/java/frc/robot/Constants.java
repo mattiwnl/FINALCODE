@@ -16,6 +16,9 @@ public class Constants {
 
     // Xbox
     public static final int kXboxControllerPort = 1;
+        public static final int kXboxLeftTriggerId = 2;
+        public static final int kXboxRightTriggerId = 3;
+
         public static final int kXboxButtonAId = 1;         // Intake Ball
         public static final int kXboxButtonBId = 2;         // Outtake Ball
         public static final int kXboxButtonXId = 3;         // Lower Intake Lift

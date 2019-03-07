@@ -4,29 +4,28 @@ import edu.wpi.first.wpilibj.command.Command;
 
 import frc.robot.Robot;
 
-public class ToCargoShip extends Command {
+public class LimelightStraight extends Command {
 
-    boolean done = false;
-
-    public ToCargoShip() {
+    public LimelightStraight() {
         requires(Robot.kDrive);
+        requires(Robot.kLimelight);
     }
     
     @Override
     protected void execute() {
-        double llArea = Robot.area;
-        if(llArea < 50) {
-            Robot.kDrive.driveLeft(.25);
+    double llX = Robot.x;
+    double llArea = Robot.area;
+        if(llArea < 20){
+            Robot.kDrive.driveLeft(.3);
             Robot.kDrive.driveRight(.25);
-        }else if(llArea >= 50) {
+        }else if(llArea >= 20){
             Robot.kDrive.driveLeft(0);
             Robot.kDrive.driveRight(0);
-            done = true;
         }
     }
 
     @Override
     protected boolean isFinished() {
-        return done;
+        return false;
     }
 }
