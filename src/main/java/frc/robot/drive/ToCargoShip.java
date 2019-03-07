@@ -15,10 +15,10 @@ public class ToCargoShip extends Command {
     @Override
     protected void execute() {
         double llArea = Robot.area;
-        if(llArea < 50) {
+        if(llArea < 45) {
             Robot.kDrive.driveLeft(.25);
             Robot.kDrive.driveRight(.25);
-        }else if(llArea >= 50) {
+        }else if(llArea >= 45) {
             Robot.kDrive.driveLeft(0);
             Robot.kDrive.driveRight(0);
             done = true;

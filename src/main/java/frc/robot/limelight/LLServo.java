@@ -17,11 +17,10 @@ public class LLServo extends Command {
 
     @Override
     protected void execute() {
-        boolean xboxStart = Robot.xbox.getRawButton(Constants.kXboxButtonStartId);
-        boolean xboxSelect = Robot.xbox.getRawButton(Constants.kXboxButtonSelectId);
-        if(xboxStart == true) {
+        boolean toggle1 = Robot.toggles.getRawButton(Constants.kToggle1Id);
+        if(toggle1 == true) {
             Robot.kLimelight.LLservo(1);
-        }else if(xboxStart == false) {
+        }else if(toggle1 == false) {
             Robot.kLimelight.LLservo(0);
         }
     }

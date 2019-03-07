@@ -13,7 +13,6 @@ public class LimelightStraight extends Command {
     
     @Override
     protected void execute() {
-    double llX = Robot.x;
     double llArea = Robot.area;
         if(llArea < 20){
             Robot.kDrive.driveLeft(.3);

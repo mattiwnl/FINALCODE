@@ -17,7 +17,6 @@ public class NavxDriveStraight extends Command {
         double angle = Robot.kNavx.gyro.getAngle();
         SmartDashboard.putNumber("angle", angle);
         boolean xboxA = Robot.xbox.getRawButton(Constants.kXboxButtonAId);
-        boolean xboxB = Robot.xbox.getRawButton(Constants.kXboxButtonBId);
         if(xboxA == true) {
             if(angle < 5 && angle > -5){
                 Robot.kDrive.driveLeft(.4);
