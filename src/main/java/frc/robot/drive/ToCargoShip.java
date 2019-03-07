@@ -14,7 +14,7 @@ public class ToCargoShip extends Command {
     
     @Override
     protected void execute() {
-        double llArea = Robot.area;
+        double llArea = Robot.area; // area value from the limelight camera
         if(llArea < 45) {
             Robot.kDrive.driveLeft(.25);
             Robot.kDrive.driveRight(.25);
