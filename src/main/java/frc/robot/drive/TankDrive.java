@@ -16,15 +16,13 @@ public class TankDrive extends Command {
         SmartDashboard.putNumber("angle", angle);
         double left = -Robot.xbox.getRawAxis(1);
         double right = -Robot.xbox.getRawAxis(5);
-        if(left > .1 || left < -.1) {
+        boolean toggle1 = Robot.toggles.getRawButton(1);
+        if(toggle1 == false){
             Robot.kDrive.driveLeft(left);
-        }else{
-            Robot.kDrive.driveLeft(0);
-        }
-        if(right > .1 || right < -.1) {
             Robot.kDrive.driveRight(right);
-        }else{
-            Robot.kDrive.driveRight(0);
+        }else if(toggle1 == true){
+            Robot.kDrive.driveLeft(right * -1);
+            Robot.kDrive.driveRight(left * -1);
         }
     }
 

@@ -16,8 +16,14 @@ public class SingleStickArcade extends Command {
         SmartDashboard.putNumber("angle", angle);
         double throttle = -Robot.xbox.getRawAxis(1);
         double turn = Robot.xbox.getRawAxis(0);
-        Robot.kDrive.driveLeft(throttle + turn);
-        Robot.kDrive.driveRight(throttle - turn);
+        boolean toggle1 = Robot.toggles.getRawButton(1);
+        if(toggle1 == false){
+            Robot.kDrive.driveLeft(throttle + turn);
+            Robot.kDrive.driveRight(throttle - turn);
+        }else if(toggle1 == true){
+            Robot.kDrive.driveLeft((throttle - turn) * -1);
+            Robot.kDrive.driveRight((throttle + turn) * -1);
+        }
     }
 
     @Override
