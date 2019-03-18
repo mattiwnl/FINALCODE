@@ -21,26 +21,33 @@ import frc.robot.lift.*;
 import frc.robot.scissor.*;
 
 public class Robot extends TimedRobot {
-
+// Controllers
     public static Joystick xboxMatt = new Joystick(Constants.kXboxMattPort);
     public static Joystick xbox = new Joystick(Constants.kXboxControllerPort);
 
+// Drive
+    public static DriveSubsystem kDrive = new DriveSubsystem();
+    public static GearShiftSubsystem kGearShift = new GearShiftSubsystem();
+// Ball
+    public static IntakeSubsystem kIntake = new IntakeSubsystem();
+    public static LiftSubsystem kLift = new LiftSubsystem();
+// Hatch
+    public static ScissorSubsystem kScissor = new ScissorSubsystem();
+    public static DuckBillSubsystem kDuckBill = new DuckBillSubsystem();
+// Cam
     public static CamCylinderSubsystem kCamCyl = new CamCylinderSubsystem();
     public static CamLiftSubsystem kCamLift = new CamLiftSubsystem();
     public static CamWheelSubsystem kCamWheel = new CamWheelSubsystem();
-    public static DriveSubsystem kDrive = new DriveSubsystem();
-    public static DuckBillSubsystem kDuckBill = new DuckBillSubsystem();
-    public static GearShiftSubsystem kGearShift = new GearShiftSubsystem();
-    public static IntakeSubsystem kIntake = new IntakeSubsystem();
-    public static LiftSubsystem kLift = new LiftSubsystem();
-    public static ScissorSubsystem kScissor = new ScissorSubsystem();
 
+// Gyro
     public AHRS gyro = new AHRS(SPI.Port.kMXP);
 
+// Compressor
     public Compressor compressor = new Compressor(0);
 
+// Servo
     public Servo llServo = new Servo(Constants.kLLServoId);
-
+// Limelight Data
     public NetworkTableEntry tx;
     public NetworkTableEntry ty;
     public NetworkTableEntry ta;
@@ -49,11 +56,12 @@ public class Robot extends TimedRobot {
     public static double y;
     public static double area;
 
+// Drives
     public static double driveCounter = 0;
 
     @Override
     public void robotInit() {
-        // Limelight Initialization
+// Limelight Initialization
         NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight");
         tx = table.getEntry("tx");
         ty = table.getEntry("ty");
@@ -63,7 +71,7 @@ public class Robot extends TimedRobot {
     public void robotPeriodic() {
         Scheduler.getInstance().run();
 
-        // X, Y, Area Values w/ Shuffleboard
+// Limelight Data w/ SmartDashboard
         x = tx.getDouble(0.0);
         y = ty.getDouble(0.0);
         area = ta.getDouble(0.0);
@@ -74,7 +82,7 @@ public class Robot extends TimedRobot {
 
         NetworkTableInstance.getDefault().getTable("limelight").getEntry("ledMode").setNumber(1); // LED Off
         NetworkTableInstance.getDefault().getTable("limelight").getEntry("camMode").setNumber(1); // Normal Camera
-
+// Gyro w/ SmartDashboard
         double angle = gyro.getAngle();
         SmartDashboard.putNumber("angle", angle);
 
