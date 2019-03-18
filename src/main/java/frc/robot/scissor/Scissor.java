@@ -15,10 +15,11 @@ public class Scissor extends Command {
 
     @Override
     protected void execute() {
-        boolean toggle7 = Robot.toggles.getRawButton(Constants.kToggle7Id);
-        if(toggle7 == true) {
+        boolean xboxMattX = Robot.xboxMatt.getRawButton(Constants.kXboxMattButtonXId);
+        boolean xboxMattY = Robot.xboxMatt.getRawButton(Constants.kXboxMattButtonYId);
+        if(xboxMattX == true) {
             Robot.kScissor.scissor(Value.kForward);
-        }else if(toggle7 == false) {
+        }else if(xboxMattY == true) {
             Robot.kScissor.scissor(Value.kReverse);
         }
     }

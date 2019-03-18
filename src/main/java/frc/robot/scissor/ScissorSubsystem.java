@@ -20,5 +20,6 @@ public class ScissorSubsystem extends Subsystem {
 
     @Override
     protected void initDefaultCommand() {
+        setDefaultCommand(new Scissor());
     }
 }

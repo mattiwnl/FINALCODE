@@ -16,12 +16,12 @@ public class Intake extends Command {
         double xboxLeftTrigger = Robot.xbox.getRawAxis(Constants.kXboxLeftTriggerId);
         double xboxRightTrigger = Robot.xbox.getRawAxis(Constants.kXboxRightTriggerId);
         if(xboxRightTrigger > .1) {
-            Robot.kIntake.intakeLeft(.25);
-            Robot.kIntake.intakeRight(.25);
+            Robot.kIntake.intakeLeft(-.65);
+            Robot.kIntake.intakeRight(.65);
         }else if(xboxLeftTrigger > .1) {
-            Robot.kIntake.intakeLeft(-.25);
-            Robot.kIntake.intakeRight(-.25);
-        }else{
+            Robot.kIntake.intakeLeft(.65);
+            Robot.kIntake.intakeRight(-.65);
+        }else {
             Robot.kIntake.intakeLeft(0);
             Robot.kIntake.intakeRight(0);
         }

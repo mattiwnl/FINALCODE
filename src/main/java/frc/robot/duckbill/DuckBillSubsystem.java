@@ -20,5 +20,6 @@ public class DuckBillSubsystem extends Subsystem {
 
     @Override
     protected void initDefaultCommand() {
+        setDefaultCommand(new DuckBill());
     }
 }
