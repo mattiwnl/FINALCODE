@@ -9,6 +9,8 @@ import frc.robot.Robot;
 
 public class Auto extends Command {
 
+    public double kP = .3;
+
     public Auto() {
         requires(Robot.kDrive);
         requires(Robot.kDuckBill);
@@ -24,29 +26,16 @@ public class Auto extends Command {
     protected void execute() {
         double angle = Robot.gyro.getAngle();
         double lla = Robot.area;
-        if(lla <= 25){
-            if(angle < 1 && angle > -1){
-                Robot.kDrive.driveLeft(ControlMode.PercentOutput, .5);
-                Robot.kDrive.driveRight(ControlMode.PercentOutput, .5);
-            }else if(angle > 1 && angle < 3){
-                Robot.kDrive.driveLeft(ControlMode.PercentOutput, -.25);
-                Robot.kDrive.driveRight(ControlMode.PercentOutput, .25);
-            }else if(angle > 3){
-                Robot.kDrive.driveLeft(ControlMode.PercentOutput, -.35);
-                Robot.kDrive.driveRight(ControlMode.PercentOutput, .35);
-            }else if(angle < -1 && angle > -3){
-                Robot.kDrive.driveLeft(ControlMode.PercentOutput, .25);
-                Robot.kDrive.driveRight(ControlMode.PercentOutput, -.25);
-            }else if(angle < -3){
-                Robot.kDrive.driveLeft(ControlMode.PercentOutput, .35);
-                Robot.kDrive.driveRight(ControlMode.PercentOutput, -.35);
-            }
-        }else if(lla > 25){
-            Robot.kDrive.driveLeft(ControlMode.PercentOutput, 0);
-            Robot.kDrive.driveRight(ControlMode.PercentOutput, 0);
-            Timer.delay(1);
-            Robot.kDuckBill.duckBill(Value.kReverse);
-        }
+        if(lla <= 5){
+            Robot.kDrive.driveLeft(ControlMode.PercentOutput, .6 + kP*angle);
+            Robot.kDrive.driveRight(ControlMode.PercentOutput, .6 - kP*angle);
+        }else if(lla > 5 && lla <= 10){
+			Robot.kDrive.driveLeft(ControlMode.PercentOutput, .4 + kP*angle);
+			Robot.kDrive.driveRight(ControlMode.PercentOutput, .4 - kP*angle);
+		}else if(){
+			Robot.kDrive.driveLeft(ControlMode.PercentOutput, .25 + kP*angle);
+			Robot.kDrive.driveRight(ControlMode.PercentOutput, .25 - kP*angle);
+		}
     }
 
     @Override
