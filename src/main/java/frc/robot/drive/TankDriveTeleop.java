@@ -1,5 +1,7 @@
 package frc.robot.drive;
 
+import com.ctre.phoenix.motorcontrol.ControlMode;
+
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Constants;
 import frc.robot.Robot;
@@ -24,11 +26,13 @@ public class TankDriveTeleop extends Command {
             Robot.driveCounter = 1;
         }
         if(Robot.driveCounter == 0){
-            Robot.kDrive.driveLeft(xboxLeft);
-            Robot.kDrive.driveRight(xboxRight);
+            Robot.llServo.set(0);
+            Robot.kDrive.driveLeft(ControlMode.PercentOutput, xboxLeft);
+            Robot.kDrive.driveRight(ControlMode.PercentOutput, xboxRight);
         }else if(Robot.driveCounter == 1){
-            Robot.kDrive.driveLeft(xboxRight * -1);
-            Robot.kDrive.driveRight(xboxLeft * -1);
+            Robot.llServo.set(1);
+            Robot.kDrive.driveLeft(ControlMode.PercentOutput, xboxRight * -1);
+            Robot.kDrive.driveRight(ControlMode.PercentOutput, xboxLeft * -1);
         }
     }
 

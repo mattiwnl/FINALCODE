@@ -57,12 +57,12 @@ public class Constants {
     public static final int kLLServoId = 1;
 
     // DoubleSolenoid
-    public static final int kHighGearId = 0;
-    public static final int kLowGearId = 1;
+    public static final int kHighGearId = 5;
+    public static final int kLowGearId = 4;
     public static final int kScissorInId = 2;
     public static final int kScissorOutId = 3;
-    public static final int kDuckBillUpId = 4;
-	public static final int kDuckBillDownId = 5;
+    public static final int kDuckBillUpId = 0;
+	public static final int kDuckBillDownId = 1;
 	public static final int kCamCylOutId = 6;
 	public static final int kCamCylInId = 7;
 

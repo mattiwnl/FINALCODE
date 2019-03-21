@@ -15,12 +15,22 @@ public class DuckBill extends Command {
 
     @Override
     protected void execute() {
-        boolean xboxMattA = Robot.xboxMatt.getRawButton(Constants.kXboxMattButtonAId);
-        boolean xboxMattB = Robot.xboxMatt.getRawButton(Constants.kXboxMattButtonBId);
-        if(xboxMattA == true) {
-            Robot.kScissor.scissor(Value.kForward);
-        }else if(xboxMattB == true) {
-            Robot.kScissor.scissor(Value.kReverse);
+        boolean xboxA = Robot.xbox.getRawButton(Constants.kXboxButtonAId);
+        // boolean xboxB = Robot.xbox.getRawButton(Constants.kXboxButtonBId);
+
+        // if(xboxA == true){
+        //     Robot.kDuckBill.duckBill(Value.kForward);
+        // }else if(xboxB == true){
+        //     Robot.kDuckBill.duckBill(Value.kReverse);
+        // }
+
+        if(xboxA == true){
+            Robot.driveCounter++;
+        }
+        if((Robot.duckBillCounter % 2) == 0){
+            Robot.kDuckBill.duckBill(Value.kForward);
+        }else {
+            Robot.kDuckBill.duckBill(Value.kReverse);
         }
     }
 
