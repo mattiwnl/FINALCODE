@@ -32,7 +32,7 @@ public class Auto extends Command {
         }else if(lla > 5 && lla <= 10){
 			Robot.kDrive.driveLeft(ControlMode.PercentOutput, .4 + kP*angle);
 			Robot.kDrive.driveRight(ControlMode.PercentOutput, .4 - kP*angle);
-		}else if(){
+		}else if(lla > 10){
 			Robot.kDrive.driveLeft(ControlMode.PercentOutput, .25 + kP*angle);
 			Robot.kDrive.driveRight(ControlMode.PercentOutput, .25 - kP*angle);
 		}
