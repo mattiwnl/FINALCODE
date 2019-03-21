@@ -2,14 +2,13 @@ package frc.robot.drive;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
 
-import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
 public class Auto extends Command {
 
-    public double kP = .3;
+    public double kP = .03;
 
     public Auto() {
         requires(Robot.kDrive);
