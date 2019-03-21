@@ -8,7 +8,8 @@ import frc.robot.Robot;
 
 public class Auto extends Command {
 
-    public double kP = .03;
+    public double kP = .01;
+    public double kL = .02;
 
     public Auto() {
         requires(Robot.kDrive);
@@ -25,19 +26,8 @@ public class Auto extends Command {
     protected void execute() {
         double angle = Robot.gyro.getAngle();
         double lla = Robot.area;
-        if(lla <= 5){
-            Robot.kDrive.driveLeft(ControlMode.PercentOutput, .6 + kP*angle);
-            Robot.kDrive.driveRight(ControlMode.PercentOutput, .6 - kP*angle);
-        }else if(lla > 5 && lla <= 10){
-			Robot.kDrive.driveLeft(ControlMode.PercentOutput, .4 + kP*angle);
-			Robot.kDrive.driveRight(ControlMode.PercentOutput, .4 - kP*angle);
-		}else if(lla > 10 && lla <= 15){
-			Robot.kDrive.driveLeft(ControlMode.PercentOutput, .25 + kP*angle);
-			Robot.kDrive.driveRight(ControlMode.PercentOutput, .25 - kP*angle);
-		}else if(lla > 15){
-			Robot.kDrive.driveLeft(ControlMode.PercentOutput, 0);
-			Robot.kDrive.driveRight(ControlMode.PercentOutput, 0);
-		}
+        Robot.kDrive.driveLeft(ControlMode.PercentOutput, (.5 - kL*lla) + kP*angle);
+        Robot.kDrive.driveRight(ControlMode.PercentOutput, (.5 - kL*lla) - kP*angle);
     }
 
     @Override
