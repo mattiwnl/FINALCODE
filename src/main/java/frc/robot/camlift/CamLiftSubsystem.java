@@ -9,7 +9,7 @@ import frc.robot.Constants;
 
 public class CamLiftSubsystem extends Subsystem {
 
-    private static final TalonSRX camLiftMotor = new TalonSRX(Constants.kLiftMotorId);
+    private static final TalonSRX camLiftMotor = new TalonSRX(Constants.kCamLiftMotorId);
 
     public CamLiftSubsystem() {
     }

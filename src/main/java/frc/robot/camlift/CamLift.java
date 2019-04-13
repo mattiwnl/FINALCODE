@@ -16,9 +16,9 @@ public class CamLift extends Command {
         boolean xboxMattButtonRB = Robot.xboxMatt.getRawButton(Constants.kXboxMattRightBumperId);
         boolean xboxMattButtonLB = Robot.xboxMatt.getRawButton(Constants.kXboxMattLeftBumperId);
         if(xboxMattButtonLB == true) {
-            Robot.kCamLift.camLift(.5);
+            Robot.kCamLift.camLift(-.75);
         }else if(xboxMattButtonRB == true) {
-            Robot.kCamLift.camLift(-.5);
+            Robot.kCamLift.camLift(.75);
         }else{
             Robot.kCamLift.camLift(0);
         }

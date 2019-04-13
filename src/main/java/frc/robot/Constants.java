@@ -39,33 +39,20 @@ public class Constants {
     public static final int kRightSlave1Id = 2;
     public static final int kRightSlave2Id = 3;
 
-    // Intake Victors
-    public static final int kLeftIntakeId = 1;
-    public static final int kRightIntakeId = 2;
-
-    // Lift Talon
-    public static final int kLiftMotorId = 7;
-
     // Cam Wheel Victors
-    public static final int kLeftCamWheel = 3;
-    public static final int kRightCamWheel = 4;
+    public static final int kLeftCamWheel = 1;
+    public static final int kRightCamWheel = 2;
 
     // Cam Lift Talon
-    public static final int kCamLiftMotorId = 8;
-
-    // Limelight Servo
-    public static final int kLLServoId = 1;
+    public static final int kCamLiftMotorId = 7;
 
     // DoubleSolenoid
-    public static final int kHighGearId = 5;
-    public static final int kLowGearId = 4;
-    public static final int kScissorInId = 2;
-    public static final int kScissorOutId = 3;
-    public static final int kDuckBillUpId = 0;
-	public static final int kDuckBillDownId = 1;
-	public static final int kCamCylOutId = 6;
-	public static final int kCamCylInId = 7;
-
-    // Other Constants
-    public static final int kWheelDiameter = 6;
+    public static final int kDuckBillUpId = 3;
+	public static final int kDuckBillDownId = 2;
+    public static final int kScissorInId = 5;
+    public static final int kScissorOutId = 4;
+    public static final int kHighGearId = 6;
+    public static final int kLowGearId = 7;
+	public static final int kCamCylOutId = 0;
+	public static final int kCamCylInId = 1;
 }

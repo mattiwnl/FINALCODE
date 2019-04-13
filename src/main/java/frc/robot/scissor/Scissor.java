@@ -18,9 +18,9 @@ public class Scissor extends Command {
         boolean xboxMattX = Robot.xboxMatt.getRawButton(Constants.kXboxMattButtonXId);
         boolean xboxMattY = Robot.xboxMatt.getRawButton(Constants.kXboxMattButtonYId);
         if(xboxMattX == true) {
-            Robot.kScissor.scissor(Value.kForward);
-        }else if(xboxMattY == true) {
             Robot.kScissor.scissor(Value.kReverse);
+        }else if(xboxMattY == true) {
+            Robot.kScissor.scissor(Value.kForward);
         }
     }
 

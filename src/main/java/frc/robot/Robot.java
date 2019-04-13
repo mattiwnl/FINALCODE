@@ -8,17 +8,12 @@ import com.kauailabs.navx.frc.AHRS;
 
 import edu.wpi.first.networktables.*;
 
-import frc.robot.camcyl.CamCylinder;
-import frc.robot.camcyl.CamCylinderSubsystem;
-import frc.robot.camlift.CamLift;
-import frc.robot.camlift.CamLiftSubsystem;
-import frc.robot.camwheel.CamWheel;
-import frc.robot.camwheel.CamWheelSubsystem;
+import frc.robot.camcyl.*;
+import frc.robot.camlift.*;
+import frc.robot.camwheel.*;
 import frc.robot.drive.*;
 import frc.robot.duckbill.*;
 import frc.robot.gearshift.*;
-import frc.robot.intake.*;
-import frc.robot.lift.*;
 import frc.robot.scissor.*;
 
 public class Robot extends TimedRobot {
@@ -28,9 +23,6 @@ public class Robot extends TimedRobot {
 // Drive
 	public static DriveSubsystem kDrive = new DriveSubsystem();
 	public static GearShiftSubsystem kGearShift = new GearShiftSubsystem();
-// Ball
-	public static IntakeSubsystem kIntake = new IntakeSubsystem();
-	public static LiftSubsystem kLift = new LiftSubsystem();
 // Hatch
 	public static ScissorSubsystem kScissor = new ScissorSubsystem();
 	public static DuckBillSubsystem kDuckBill = new DuckBillSubsystem();
@@ -42,8 +34,6 @@ public class Robot extends TimedRobot {
 	public static AHRS gyro = new AHRS(SPI.Port.kMXP);
 // Compressor
 	public Compressor compressor = new Compressor(0);
-// Servo
-	public static Servo llServo = new Servo(Constants.kLLServoId);
 // Limelight Data
 	public NetworkTableEntry tx;
 	public NetworkTableEntry ty;
@@ -51,10 +41,6 @@ public class Robot extends TimedRobot {
 	public static double x;
 	public static double y;
 	public static double area;
-// Drives
-	public static double driveCounter = 0;
-// Duckbill
-	public static double duckBillCounter = 0;
 
 	@Override
 	public void robotInit() {
@@ -78,9 +64,6 @@ public class Robot extends TimedRobot {
 
 		NetworkTableInstance.getDefault().getTable("limelight").getEntry("ledMode").setNumber(1); // LED Off
 		NetworkTableInstance.getDefault().getTable("limelight").getEntry("camMode").setNumber(1); // Normal Camera
-// Gyro w/ SmartDashboard
-		double angle = gyro.getAngle();
-		SmartDashboard.putNumber("angle", angle);
 
 		if(xboxMatt.getRawButton(Constants.kXboxMattButtonAId) == true){
 			compressor.setClosedLoopControl(true);
@@ -94,15 +77,12 @@ public class Robot extends TimedRobot {
 	@Override
 	public void disabledPeriodic() {
 		Scheduler.getInstance().run();
-	} 
+	}
 	@Override
 	public void autonomousInit() {
 	// Drive
-		new TankDriveTeleop().start();
+		new SplitArcadeTeleop().start();
 		new GearShift().start();
-	// Ball
-		new Intake().start();
-		new Lift().start();
 	// Hatch
 		new DuckBill().start();
 		new Scissor().start();
@@ -118,11 +98,8 @@ public class Robot extends TimedRobot {
 	@Override
 	public void teleopInit() {
 	// Drive
-		new TankDriveTeleop().start();
+		new SplitArcadeTeleop().start();
 		new GearShift().start();
-	// Ball
-		new Intake().start();
-		new Lift().start();
 	// Hatch
 		new DuckBill().start();
 		new Scissor().start();

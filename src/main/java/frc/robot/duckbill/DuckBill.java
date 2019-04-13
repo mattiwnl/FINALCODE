@@ -16,20 +16,10 @@ public class DuckBill extends Command {
     @Override
     protected void execute() {
         boolean xboxA = Robot.xbox.getRawButton(Constants.kXboxButtonAId);
-        // boolean xboxB = Robot.xbox.getRawButton(Constants.kXboxButtonBId);
-
-        // if(xboxA == true){
-        //     Robot.kDuckBill.duckBill(Value.kForward);
-        // }else if(xboxB == true){
-        //     Robot.kDuckBill.duckBill(Value.kReverse);
-        // }
-
+        boolean xboxB = Robot.xbox.getRawButton(Constants.kXboxButtonBId);
         if(xboxA == true){
-            Robot.driveCounter++;
-        }
-        if((Robot.duckBillCounter % 2) == 0){
             Robot.kDuckBill.duckBill(Value.kForward);
-        }else {
+        }else if(xboxB == true){
             Robot.kDuckBill.duckBill(Value.kReverse);
         }
     }

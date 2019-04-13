@@ -28,10 +28,10 @@ public class DriveSubsystem extends Subsystem {
         rightMaster.setNeutralMode(NeutralMode.Brake);
 
         // leftMaster.configOpenloopRamp(.25, 0);
-        leftMaster.configNeutralDeadband(.2, 0);
+        leftMaster.configNeutralDeadband(.175, 0);
 
         // rightMaster.configOpenloopRamp(.25, 0);
-        rightMaster.configNeutralDeadband(.2, 0);
+        rightMaster.configNeutralDeadband(.175, 0);
     }
 
     public void driveLeft(ControlMode mode, double left) {

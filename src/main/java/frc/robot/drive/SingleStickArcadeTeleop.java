@@ -15,8 +15,8 @@ public class SingleStickArcadeTeleop extends Command {
     protected void execute() {
         double throttle = -Robot.xbox.getRawAxis(1);
         double turn = Robot.xbox.getRawAxis(0);
-        Robot.kDrive.driveLeft(ControlMode.PercentOutput, throttle + turn);
-        Robot.kDrive.driveRight(ControlMode.PercentOutput, throttle - turn);
+        Robot.kDrive.driveLeft(ControlMode.PercentOutput, throttle - turn);
+        Robot.kDrive.driveRight(ControlMode.PercentOutput, throttle + turn);
     }
 
     @Override
@@ -24,3 +24,5 @@ public class SingleStickArcadeTeleop extends Command {
         return false;
     }
 }
+
+// THIS IS ONLY HERE FOR TESTING DRIVERS
